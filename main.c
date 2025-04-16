@@ -1,56 +1,54 @@
-//Variables to store pin location
+//All variables with pin numbers
 int ledRedPin = 11;
 int ledYellowPin = 12;
 int ledGreenPin = 13;
 int ldrPin = A0;
-int ldrValue = 0;
+int ldrValue = 0; //Keeps track of ldr value
 int buzzerPin = 10;
 
-//Variables to manage the buzzer
-unsigned long timeBreak = 3000;
+//Variables to control buzzer
+unsigned long duration = 0;
 bool buzzerRequest = false;
 
 void setup() {
-  pinMode(ledRedPin, OUTPUT); //red led set as output
-  pinMode(ledYellowPin, OUTPUT); //yellow led set as output
-  pinMode(ledGreenPin, OUTPUT); //green led set as output
-  pinMode(buzzerPin, OUTPUT); //buzzer set as output
+  //Set all components output
+  pinMode(ledRedPin, OUTPUT);
+  pinMode(ledYellowPin, OUTPUT);
+  pinMode(ledGreenPin, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
   Serial.begin(9600);
 }
 
 void loop() {
-  ldrValue = analogRead(ldrPin); //Convert analog value to digital value
-  Serial.println(ldrValue); //Print the digital value
+  ldrValue = analogRead(ldrPin); //Transform analog value in digital numbers
+  Serial.println(ldrValue); //Print ldr value
 
-  //Checking if the brightness is more than 78
-  if(ldrValue >= 78 && ldrValue < 250){
-    unsigned long duration = millis();
+  //Check the light and turn on Yellow led
+  if(ldrValue >= 250 && ldrValue < 400){ 
+    duration = millis();
 
-    digitalWrite(ledYellowPin, HIGH); //Light up yellow led
-    digitalWrite(ledGreenPin, LOW); //Turn off green led
-    digitalWrite(ledRedPin, LOW); //Turn off red led
-
-    //Manage the buzzer with a delay of 3s
-    if (!buzzerRequest){
-      tone(buzzerPin, 10, 3000);
-        if(duration >= timeBreak){
-          noTone(buzzerPin);
-          buzzerRequest = false;
-        }
-    }
-  }
-
-  //Checking if the brightness is less then 77
-  else if (ldrValue <= 77){
-    digitalWrite(ledRedPin, HIGH); //Light up red led
-    digitalWrite(ledGreenPin, LOW); //Turn off green led
-    digitalWrite(ledYellowPin, LOW); //Turn off yellow led
-    noTone(buzzerPin);
-  }
-  else {
-    digitalWrite(ledGreenPin, HIGH);
-    digitalWrite(ledYellowPin, LOW);
+    digitalWrite(ledYellowPin, HIGH);
+    digitalWrite(ledGreenPin, LOW);
     digitalWrite(ledRedPin, LOW);
     noTone(buzzerPin);
+    buzzerRequest = false; //Keep the buzzerRequest false
+  }
+  //Check the light and turn on Green led
+  else if (ldrValue <= 600){
+    digitalWrite(ledRedPin, LOW);
+    digitalWrite(ledGreenPin, HIGH);
+    digitalWrite(ledYellowPin, LOW);
+  }
+    //Turn on Red led if none of the above is on
+  else {
+    digitalWrite(ledGreenPin, LOW);
+    digitalWrite(ledYellowPin, LOW);
+    digitalWrite(ledRedPin, HIGH);
+
+      //buzzer make sound
+      if (!buzzerRequest){
+        tone(buzzerPin, 262, 3000);
+        buzzerRequest = true; //Turn off the buzzer sound
+      }
   }
 }
