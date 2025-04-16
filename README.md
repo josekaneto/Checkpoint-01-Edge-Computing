@@ -2,6 +2,10 @@
 
 ###
 
+<h3>Sobre o Projeto</h3>
+<p>Nosso projeto é um sistema de monitoramento de luminosidade, onde temos um LDR (Light Dependent Resistor) conectado a um arduino. Ele foi desenvolvido usando a linguagem C</p>
+###
+
 <h3>Equipamentos e montagem</h3>
 
 <p>Utilizaremos o Arduino Uno e uma breadboard, para nos auxiliar na realização do projeto.</p>
