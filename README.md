@@ -1,12 +1,12 @@
 <h1>Checkpoint 01 Edge Computing and Computer Systems - Lucas Demetrius Augusto</h1>
 
-###
+
 
 <h3>Sobre o Projeto 💡</h3> 
 
-<p>Nosso projeto é um sistema de monitoramento de luminosidade de uma vinícola, onde precisamos que a iluminação seja controlada para que os vinhos não estraguem. Utilizamos um LDR (Light Dependent Resistor) conectado a um arduino, assim conseguimos ligar três leds, sendo eles: Vermelho, quando a luminosidade estiver acima do normal, Amarelo, para avisar sobre a luminosidade e Verde, quando a luminosidade estiver perfeita para o ambiente. Ele foi desenvolvido usando a linguagem C</p>
+<p>Nosso projeto é um sistema de monitoramento de luminosidade de uma vinícola, onde precisamos que a iluminação seja controlada para que os vinhos não estraguem. Utilizamos um LDR (Light Dependent Resistor) conectado a um arduino, assim conseguimos ligar três leds, sendo eles: Vermelho, quando a luminosidade estiver acima do normal, Amarelo, para avisar sobre a luminosidade e Verde, quando a luminosidade estiver perfeita para o ambiente. Ele foi desenvolvido usando a linguagem C.</p>
 
-###
+<hr>
 
 <h3>Equipamentos e montagem 🛠️</h3>
 
@@ -27,7 +27,7 @@
 
 <p>Se tiver alguma dúvida de como montar, acesse <a href="https://wokwi.com/projects/428328074372035585">projeto de exemplo</a></p>
 
-###
+<hr>
 
 <h2>Wokwi - Simulação</h2>
 
