@@ -6,7 +6,7 @@
 
 <p>Nosso projeto é um sistema de monitoramento de luminosidade de uma vinícola, onde precisamos que a iluminação seja controlada para que os vinhos não estraguem. Utilizamos um LDR (Light Dependent Resistor) conectado a um arduino, assim conseguimos ligar três leds, sendo eles: Vermelho, quando a luminosidade estiver acima do normal, Amarelo, para avisar sobre a luminosidade e Verde, quando a luminosidade estiver perfeita para o ambiente. Ele foi desenvolvido usando a linguagem C</p>
 
-###p
+###
 
 <h3>Equipamentos e montagem 🛠️</h3>
 
