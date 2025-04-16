@@ -2,11 +2,13 @@
 
 ###
 
-<h3>Sobre o Projeto</h3>
-<p>Nosso projeto é um sistema de monitoramento de luminosidade, onde temos um LDR (Light Dependent Resistor) conectado a um arduino. Ele foi desenvolvido usando a linguagem C</p>
-###
+<h3>Sobre o Projeto 💡</h3> 
 
-<h3>Equipamentos e montagem</h3>
+<p>Nosso projeto é um sistema de monitoramento de luminosidade de uma vinícola, onde precisamos que a iluminação seja controlada para que os vinhos não estraguem. Utilizamos um LDR (Light Dependent Resistor) conectado a um arduino, assim conseguimos ligar três leds, sendo eles: Vermelho, quando a luminosidade estiver acima do normal, Amarelo, para avisar sobre a luminosidade e Verde, quando a luminosidade estiver perfeita para o ambiente. Ele foi desenvolvido usando a linguagem C</p>
+
+###p
+
+<h3>Equipamentos e montagem 🛠️</h3>
 
 <p>Utilizaremos o Arduino Uno e uma breadboard, para nos auxiliar na realização do projeto.</p>
 <p>Utilizaremos três leds, um verde com o cátono na posição F4 e com o ânodo no F5 , um vermelho cátono na posição F24 e com o ânodo no F25 e um amarelo cátono na posição F14 e com o ânodo no F15.</p>
@@ -31,7 +33,7 @@
 
 ####
 
-<h3>Passo a Passo</h3>
+<h3>Passo a Passo 📋</h3>
 
 <ul>
   <li>
