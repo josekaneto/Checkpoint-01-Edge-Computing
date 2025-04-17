@@ -1,17 +1,15 @@
-//All variables with pin numbers
 int ledRedPin = 11;
 int ledYellowPin = 12;
 int ledGreenPin = 13;
 int ldrPin = A0;
-int ldrValue = 0; //Keeps track of ldr value
+int ldrValue = 0;
 int buzzerPin = 10;
 
-//Variables to control buzzer
+unsigned long timeBreak = 3000;
 unsigned long duration = 0;
 bool buzzerRequest = false;
 
 void setup() {
-  //Set all components output
   pinMode(ledRedPin, OUTPUT);
   pinMode(ledYellowPin, OUTPUT);
   pinMode(ledGreenPin, OUTPUT);
@@ -20,35 +18,32 @@ void setup() {
 }
 
 void loop() {
-  ldrValue = analogRead(ldrPin); //Transform analog value in digital numbers
-  Serial.println(ldrValue); //Print ldr value
+  ldrValue = analogRead(ldrPin);
+  Serial.println(ldrValue);
 
-  //Check the light and turn on Yellow led
-  if(ldrValue >= 250 && ldrValue < 400){ 
+  if(ldrValue >= 78 && ldrValue < 250){
     duration = millis();
 
     digitalWrite(ledYellowPin, HIGH);
     digitalWrite(ledGreenPin, LOW);
     digitalWrite(ledRedPin, LOW);
-    noTone(buzzerPin);
-    buzzerRequest = false; //Keep the buzzerRequest false
+    buzzerRequest = false;
   }
-  //Check the light and turn on Green led
-  else if (ldrValue <= 600){
-    digitalWrite(ledRedPin, LOW);
-    digitalWrite(ledGreenPin, HIGH);
-    digitalWrite(ledYellowPin, LOW);
-  }
-    //Turn on Red led if none of the above is on
-  else {
+  else if (ldrValue <= 77){
+    digitalWrite(ledRedPin, HIGH);
     digitalWrite(ledGreenPin, LOW);
     digitalWrite(ledYellowPin, LOW);
-    digitalWrite(ledRedPin, HIGH);
 
-      //buzzer make sound
-      if (!buzzerRequest){
-        tone(buzzerPin, 262, 3000);
-        buzzerRequest = true; //Turn off the buzzer sound
-      }
+    if (!buzzerRequest){
+      tone(buzzerPin, 262, 3000);
+      buzzerRequest = true;
+    }
+
+  }
+  else {
+    digitalWrite(ledGreenPin, HIGH);
+    digitalWrite(ledYellowPin, LOW);
+    digitalWrite(ledRedPin, LOW);
+    buzzerRequest = false;
   }
 }
