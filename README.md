@@ -31,6 +31,8 @@
 
 <h2>Wokwi - Simulação</h2>
 
+<img src="imagem/img-arduino.png">
+
 ####
 
 <h3>Passo a Passo 📋</h3>
@@ -56,4 +58,8 @@
   </li>
 </ul>
 
-<img src="imagem/img-arduino.png">
+<hr>
+
+
+
+
