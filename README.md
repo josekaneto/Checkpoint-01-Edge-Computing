@@ -56,4 +56,4 @@
   </li>
 </ul>
 
-<img src="./imagem/img-arduino.png">
+<img src="imagem/img-arduino.png">
